@@ -29,7 +29,19 @@ function compute()
 function updateRate(){
     //get the rate value
     var rateval = document.getElementById("rate").value;
+
     //display the rate on the span
     document.getElementById("rate_val").innerHTML=rateval;
 }
-        
+
+function validatePrincipal(){
+  var principal = document.getElementById("principal");
+
+   if(parseFloat(principal.value) <= 0.0){
+     if (confirm('Enter a positive number')) {
+        //set focus on principat input
+        principal.focus();
+     }
+   }
+
+}
