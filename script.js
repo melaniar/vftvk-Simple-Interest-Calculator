@@ -14,7 +14,7 @@ function compute()
     var year = new Date().getFullYear() + parseInt(years);
 
     //calculate the total amount on the maturity year
-    var amount = principal + interest;
+    var amount = parseFloat(principal) + parseFloat(interest);
 
     //get the "result" ref
     var result = document.getElementById("result");
