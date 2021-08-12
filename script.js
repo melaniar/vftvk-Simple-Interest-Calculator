@@ -23,10 +23,27 @@ function compute()
     var result = document.getElementById("result");
 
      //display the result
-    result.innerHTML = "If you deposit " + principal + ", \<br\> at an interest rate of "
-                        + rate + "% \<br\> You will receive an amount of "
-                        + amount + ", \<br\> in the year " + year
-                        + "\<br\>"
+     var principalSpan = document.createElement("span");
+     principalSpan.setAttribute('class', 'yellowBG');
+     principalSpan.innerText= principal;
+
+     var rateSpan = document.createElement("span");
+     rateSpan.setAttribute('class', 'yellowBG');
+     rateSpan.innerText= rate +"%";
+
+     var amountSpan = document.createElement("span");
+     amountSpan.setAttribute('class', 'yellowBG');
+     amountSpan.innerText= amount;
+
+     var yearSpan = document.createElement("span");
+     yearSpan.setAttribute('class', 'yellowBG');
+     yearSpan.innerText= amount;
+
+    var resultContent = `If you deposit ` + principalSpan.outerHTML + `, \<br\> at an interest rate of `
+                        + rateSpan.outerHTML + `  <br\> You will receive an amount of   `
+                        + amountSpan.outerHTML + `, <br\> in the year  ` + yearSpan.outerHTML
+                        + ` <br\>`
+    result.innerHTML =resultContent;
     }
 }
 
