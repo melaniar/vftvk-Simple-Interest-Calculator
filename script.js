@@ -1,5 +1,8 @@
 function compute()
 {
+    //validate principal...make sure it has a positive number before continue with the calculation
+    if(validatePrincipal()){
+
     //get the principal value
     var principal = document.getElementById("principal").value;
     //get the rate value
@@ -24,6 +27,7 @@ function compute()
                         + rate + "% \<br\> You will receive an amount of "
                         + amount + ", \<br\> in the year " + year
                         + "\<br\>"
+    }
 }
 
 function updateRate(){
@@ -37,11 +41,14 @@ function updateRate(){
 function validatePrincipal(){
   var principal = document.getElementById("principal");
 
-   if(parseFloat(principal.value) <= 0.0){
+   if(principal.value == "" || parseFloat(principal.value) <= 0.0){
      if (confirm('Enter a positive number')) {
         //set focus on principat input
         principal.focus();
+        result.innerHTML=""; //reset the previously calculated result -- if any
+        return false;
      }
    }
+   return true;
 
 }
